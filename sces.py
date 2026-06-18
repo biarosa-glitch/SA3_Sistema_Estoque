@@ -1,8 +1,8 @@
 produtos = [
-    [111, "Chave", 300, "A-190"]
+    [111, "Chave", 300, "A-190"] ##produto já existente dentro do sistema, para poupar uso repetitivo do código
 ]
 
-def adicionar_produto():
+def adicionar_produto(): ##essa função adicionará os produtos desejados pelo usuário dentro do sistema de estoque
     global IDproduto
     global NomeProduto
     IDproduto = int(input("Qual o ID do produto?: "))
@@ -12,11 +12,11 @@ def adicionar_produto():
     produtos.append([IDproduto, NomeProduto, quantidadeProduto, localizaçãoProduto])
     
 
-def listagem_produtos():
+def listagem_produtos(): ##função responsável por listar os produtos 5existentes no sistema de estoque
     for linha in produtos:
             print(linha)
 
-def buscar_produto():
+def buscar_produto(): ##essa função busca os produtos dentro da matriz
     IDProcurado = int(input("Qual o ID do produto procurado?: "))
     produtoEncontrado = -1
     for linha in produtos:
@@ -28,7 +28,7 @@ def buscar_produto():
     if produtoEncontrado == -1:
         print("Esse produto não existe! Digite um ID existente.")
 
-def atualizar_estoque():
+def atualizar_estoque(): ##essa função modificará a quantidade de um produto
     ID_desejado= int(input("Qual o ID do produto que deseja alterar a quantidade?: "))
     linha_produto = -1
     for i in range(len(produtos)):
