@@ -13,10 +13,7 @@ def adicionar_produto():
     
 
 def listagem_produtos():
-    if produtos == []:
-        print("O estoque está vazio! Adicione os produtos desejados.")
-    else:
-        for linha in produtos:
+    for linha in produtos:
             print(linha)
 
 def buscar_produto():
