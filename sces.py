@@ -1,5 +1,5 @@
 produtos = [
-    [123, "Chave", 300, "A-190"]
+    [111, "Chave", 300, "A-190"]
 ]
 
 def adicionar_produto():
@@ -13,8 +13,11 @@ def adicionar_produto():
     
 
 def listagem_produtos():
-    for linha in produtos:
-        print(linha)
+    if produtos == []:
+        print("O estoque está vazio! Adicione os produtos desejados.")
+    else:
+        for linha in produtos:
+            print(linha)
 
 def buscar_produto():
     IDProcurado = int(input("Qual o ID do produto procurado?: "))
@@ -23,8 +26,10 @@ def buscar_produto():
         if IDProcurado == linha[0]:
             print(f"Produto encontrado! {linha}")
             produtoEncontrado = 1
-        if produtoEncontrado == -1:
-            print("Esse produto não existe! Digite um ID existente.")
+            break
+
+    if produtoEncontrado == -1:
+        print("Esse produto não existe! Digite um ID existente.")
 
 def atualizar_estoque():
     ID_desejado= int(input("Qual o ID do produto que deseja alterar a quantidade?: "))
@@ -37,11 +42,22 @@ def atualizar_estoque():
     else:
         Alteracao_qte = int(input("Qual a nova quantidade?: "))
         produtos[linha_produto][2] = Alteracao_qte
+        print("Quantidade atualizada!")
 
 
+while True: ##esse loop roda para sempre!
+    print("\nBem vindo ao menu interativo Sistema de Controle de Estoque Simplificado (SCES). Por favor selecione uma opção:")
+    print("\n1- Adicionar produto | 2 - Listar produtos | 3- Buscar produto | 4- Atualizar estoque | 5- Sair")
+    opcao = input("Escolha: ")
+    if (opcao == "1"):
+        adicionar_produto()
+    elif (opcao == "2"):
+        listagem_produtos()
+    elif (opcao == "3"):
+        buscar_produto()
+    elif (opcao == "4"):
+        atualizar_estoque()
+    elif (opcao == "5"):
+        print("Saindo...")
+        break
 
-adicionar_produto()
-listagem_produtos()
-buscar_produto()
-atualizar_estoque()
-listagem_produtos()
