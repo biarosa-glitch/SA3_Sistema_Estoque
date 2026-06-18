@@ -1,10 +1,11 @@
 produtos = []
 
 def adicionar_produto():
-    IDproduto = input(int("Qual o ID do produto?: "))
+    IDproduto = int(input("Qual o ID do produto?: "))
     NomeProduto = input("Qual o nome do produto?: ")
-    quantidadeProduto = input(int("Qual a quantidade em estoque do produto?: "))
+    quantidadeProduto = int(input("Qual a quantidade em estoque do produto?: "))
     localizaçãoProduto = input("Qual a localização do produto?: ")
+    produtos.append([IDproduto, NomeProduto, quantidadeProduto, localizaçãoProduto])
     
 
 def listagem_produtos():
@@ -17,3 +18,5 @@ def buscar_produto():
 def atualizar_estoque():
     print("")
 
+adicionar_produto()
+listagem_produtos()
