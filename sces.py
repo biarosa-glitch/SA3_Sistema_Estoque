@@ -1,5 +1,7 @@
 produtos = [
-    [111, "Chave", 300, "A-190"] ##produto já existente dentro do sistema, para poupar uso repetitivo do código
+    [111, "Chave", 300, "A-190"], ##produto já existente dentro do sistema, para poupar uso repetitivo do código
+    [121, "Martelo", 6, "A-102"], ##produto já existente dentro do sistema, para poupar uso repetitivo do código
+    [131, "Parafuso", 215, "A-890"], ##produto já existente dentro do sistema, para poupar uso repetitivo do código
 ]
 
 def adicionar_produto(): ##essa função adicionará os produtos desejados pelo usuário dentro do sistema de estoque
@@ -52,10 +54,11 @@ def estoque_minimo():
     for linha in produtos:
         if linha[2] < 5:
             print(f"Alerta! {linha} está com baixa quantidade: {linha[2]}")
-            break
 
-    else:
-        print("Tudo certo! Prossiga com o sistema.")
+    
+    print("\nTudo certo! Prossiga com o sistema.")
+
+
     travar_menu()
 
 
