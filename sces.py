@@ -18,6 +18,8 @@ def buscar_produto():
     if IDproduto == True:
         for linha in produtos:
             print(linha)
+    else:
+        print("Esse produto não existe!")
 
 def atualizar_estoque():
     print("")
