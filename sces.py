@@ -10,11 +10,16 @@ def adicionar_produto(): ##essa função adicionará os produtos desejados pelo 
     quantidadeProduto = int(input("Qual a quantidade em estoque do produto?: "))
     localizaçãoProduto = input("Qual a localização do produto?: ")
     produtos.append([IDproduto, NomeProduto, quantidadeProduto, localizaçãoProduto])
+    travar_menu()
+
+def travar_menu():
+    input("\nPressione <ENTER> para continuar...")
     
 
 def listagem_produtos(): ##função responsável por listar os produtos 5existentes no sistema de estoque
     for linha in produtos:
             print(linha)
+    travar_menu()
 
 def buscar_produto(): ##essa função busca os produtos dentro da matriz
     IDProcurado = int(input("Qual o ID do produto procurado?: "))
@@ -27,6 +32,7 @@ def buscar_produto(): ##essa função busca os produtos dentro da matriz
 
     if produtoEncontrado == -1:
         print("Esse produto não existe! Digite um ID existente.")
+    travar_menu()
 
 def atualizar_estoque(): ##essa função modificará a quantidade de um produto
     ID_desejado= int(input("Qual o ID do produto que deseja alterar a quantidade?: "))
@@ -40,6 +46,7 @@ def atualizar_estoque(): ##essa função modificará a quantidade de um produto
         Alteracao_qte = int(input("Qual a nova quantidade?: "))
         produtos[linha_produto][2] = Alteracao_qte
         print("Quantidade atualizada!")
+    travar_menu()
 
 
 while True: ##esse loop roda para sempre!
