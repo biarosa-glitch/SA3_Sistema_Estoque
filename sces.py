@@ -43,7 +43,7 @@ def atualizar_estoque(): ##essa função modificará a quantidade de um produto
 
 
 while True: ##esse loop roda para sempre!
-    print("\nBem vindo ao menu interativo Sistema de Controle de Estoque Simplificado (SCES). Por favor selecione uma opção:")
+    print("\nBem vindo ao menu interativo Sistema de Controle de Estoque Simplificado (SCES). Os produtos serão organizados em: ID, Nome do produto, Quantidade e Localização (X- número). Por favor selecione uma opção:")
     print("\n1- Adicionar produto | 2 - Listar produtos | 3- Buscar produto | 4- Atualizar estoque | 5- Sair")
     opcao = input("Escolha: ")
     if (opcao == "1"):
@@ -55,6 +55,6 @@ while True: ##esse loop roda para sempre!
     elif (opcao == "4"):
         atualizar_estoque()
     elif (opcao == "5"):
-        print("Saindo...")
+        print("Sessão encerrada. Saindo...")
         break
 
